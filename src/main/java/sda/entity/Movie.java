@@ -42,9 +42,8 @@ public class Movie {
     }
 
 
-    private Movie() {
+    private Movie() {}
 
-    }
     public Integer getId() {
         return id;
     }

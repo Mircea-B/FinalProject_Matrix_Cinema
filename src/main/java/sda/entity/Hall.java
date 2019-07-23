@@ -50,6 +50,9 @@ public class Hall {
                 "numberOfSeats=" + seat +'\'' +
                 '}';
     }
+
+    private Hall(){}
+
     public Integer getId() {
         return id;
     }
@@ -85,6 +88,8 @@ public class Hall {
         this.seat = seat;
         return this;
     }
+
+
 
 
 

@@ -54,6 +54,8 @@ public class Schedule {
                 '}';
     }
 
+    private Schedule(){}
+
     public Integer getId() {
         return id;
     }
