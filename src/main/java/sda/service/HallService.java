@@ -1,6 +1,7 @@
 package sda.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import sda.entity.Hall;
 import sda.model.HallDTO;
 import sda.repository.HallRepository;
@@ -8,6 +9,7 @@ import sda.repository.HallRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class HallService {
 
     @Autowired
