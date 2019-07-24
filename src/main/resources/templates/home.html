@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Halls</title>
+    <title>Welcome 2 Matrix Cinema</title>
 </head>
 <body>
-<h1>Matrix Cinemas Halls</h1>
+<h1>Choose you destiny:</h1>
+<table style="width: 100%" th:each="hall:${halls}">
+    <tr th:text="${hall.id}"></tr>
+    <tr th:text="${hall.name}"></tr>
+    <tr th:text="${hall.seat}"></tr>
+</table>
+
+<p>Here, at Matrix Cinema you can watch your favourites movies in three different halls.
+    The architecture project offers different surreal theatre décor combined with the most
+    advanced acoustics standards.</p>
+
 
 </body>
 </html>
