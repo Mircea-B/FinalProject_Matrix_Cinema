@@ -11,6 +11,7 @@ public class MatrixCinema {
     // This should be changed in the POM file as well. See line 12.
     public static void main(String[] args) {
         SpringApplication.run(MatrixCinema.class, args);
+
     }
 
 }

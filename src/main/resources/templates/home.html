@@ -6,11 +6,11 @@
 </head>
 <body>
 <h1>Choose you destiny:</h1>
-<table style="width: 100%" th:each="hall:${halls}">
-    <tr th:text="${hall.id}"></tr>
-    <tr th:text="${hall.name}"></tr>
-    <tr th:text="${hall.seat}"></tr>
-</table>
+<ol th:each="hall:${halls}">
+    <li th:text="${hall.id}"></li>
+    <li th:text="${hall.name}"></li>
+    <li th:text="${hall.seat}"></li>
+</ol>
 
 <p>Here, at Matrix Cinema you can watch your favourites movies in three different halls.
     The architecture project offers different surreal theatre décor combined with the most
