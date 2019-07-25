@@ -21,18 +21,19 @@ public class HallController {
     public String hallPage(Model model, @PathVariable("halls") Integer hallsId) {
        HallDTO hallByName = hallService.getHallById(hallsId);
 
-       model.addAttribute("hall",hallByName.name);
+       model.addAttribute("hall",hallByName);
+
        return "home";
     }
 
     @GetMapping("/home")
-    public String hallPage(Model model) {
+    public List<HallDTO> hallPage(Model model) {
         List<HallDTO> allHalls = hallService.getAllHalls();
 
         System.out.println("Does it work?");
 
         model.addAttribute("halls", allHalls);
-        return "home";
+        return allHalls;
     }
 
     @GetMapping(name = "/hall/json", produces = "application/json")

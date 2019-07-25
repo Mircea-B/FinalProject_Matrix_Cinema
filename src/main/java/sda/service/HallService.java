@@ -20,20 +20,22 @@ public class HallService {
         Optional<Hall> byId = hallRepository.findById(id);
 
         if (byId.isPresent()) {
-            return new HallDTO(byId.get().name);
+            return new HallDTO(byId.get().name, id, byId.get().getSeat());
         }
-        return new HallDTO("Not found");
+        return new HallDTO("Not found",0,0);
     }
 
     public List<HallDTO> getAllHalls() {
-        List<HallDTO> allHalls = new ArrayList<>();
 
-        List<Hall> hallList = hallRepository.findAllByOrderByIdAsc();
+
+      List<HallDTO> allHalls = new ArrayList<>();
+
+       List<Hall> hallList = hallRepository.findAllByOrderByIdAsc();
 
         for (Hall a : hallList) {
-            allHalls.add(new HallDTO(a.name));
+            allHalls.add(new HallDTO(a.name, a.getId(),a.getSeat()));
 
-        }
+       }
         return allHalls;
     }
 
@@ -41,7 +43,7 @@ public class HallService {
         List<HallDTO> allHallsByName = new ArrayList<>();
         List<Hall> hallList = hallRepository.findByNameOrderBySeatAsc(name);
         for (Hall a : hallList) {
-            allHallsByName.add(new HallDTO(a.getName()));
+            allHallsByName.add(new HallDTO(a.getName(),a.getId(),a.getSeat()));
         }
         return allHallsByName;
 
