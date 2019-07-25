@@ -8,12 +8,22 @@ import sda.repository.HallRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class HallService {
 
     @Autowired
     HallRepository hallRepository;
+
+    public HallDTO getHallById(Integer id) {
+        Optional<Hall> byId = hallRepository.findById(id);
+
+        if (byId.isPresent()) {
+            return new HallDTO(byId.get().name);
+        }
+        return new HallDTO("Not found");
+    }
 
     public List<HallDTO> getAllHalls() {
         List<HallDTO> allHalls = new ArrayList<>();
