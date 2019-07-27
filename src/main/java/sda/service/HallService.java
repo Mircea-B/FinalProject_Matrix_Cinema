@@ -42,6 +42,7 @@ public class HallService {
     public List<HallDTO> getHallByName(String name) {
         List<HallDTO> allHallsByName = new ArrayList<>();
         List<Hall> hallList = hallRepository.findByNameOrderBySeatAsc(name);
+
         for (Hall a : hallList) {
             allHallsByName.add(new HallDTO(a.getName(),a.getId(),a.getSeat()));
         }

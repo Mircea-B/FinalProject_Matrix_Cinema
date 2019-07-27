@@ -16,6 +16,13 @@
     The architecture project offers different surreal theatre décor combined with the most
     advanced acoustics standards.</p>
 
+<h2> Choose a movie: </h2>
+
+<ol th:each="movie:${movies}">
+    <li th:text="${movie.id}"></li>
+    <li th:text="${movie.name}"></li>
+
+</ol>
 
 </body>
 </html>

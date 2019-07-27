@@ -20,13 +20,13 @@ public class Movie {
             name = "native",
             strategy = "native"
     )
-    private Integer id;
+    public Integer id;
 
     @Column(name = "name")
-    private String name;
+    public String name;
 
     @Column (name = "running")
-    private Boolean running;
+    public int running;
 
     private Movie(String name){
         this.name = name;
@@ -62,11 +62,11 @@ public class Movie {
         return this;
     }
 
-    public Boolean getRunning() {
+    public Integer getRunning() {
         return running;
     }
 
-    public Movie setRunning(Boolean running) {
+    public Movie setRunning(Integer running) {
         this.running = running;
         return this;
     }
