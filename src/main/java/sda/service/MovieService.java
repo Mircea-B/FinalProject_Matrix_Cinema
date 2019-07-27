@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import sda.entity.Movie;
 import sda.model.MovieDTO;
 import sda.repository.MovieRepository;
+import sda.repository.ScheduleRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class MovieService {
     }
 
     public List<MovieDTO> getAllMovies(){
+
         List<MovieDTO> allMovies = new ArrayList<>();
 
         List<Movie> all = movieRepository.findByOrderByNameAsc();

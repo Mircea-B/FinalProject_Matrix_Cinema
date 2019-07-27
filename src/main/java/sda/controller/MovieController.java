@@ -43,7 +43,7 @@ public class MovieController {
     */
 
     @GetMapping("/get")
-    public List<MovieDTO> getMethod(@RequestParam("movies") int id) {
+    public List<MovieDTO> getMethod(@RequestParam("movies") Integer id) {
         return movieService.getAllMovies();
     }
 }

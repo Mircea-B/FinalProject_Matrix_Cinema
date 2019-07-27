@@ -3,6 +3,8 @@ package sda.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -24,10 +26,11 @@ public class Schedule {
     )
     private Integer id;
 
-    @Column(name = "date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    public Schedule(Date date) {
+
+    public Schedule(Timestamp date) {
         this.date = date;
     }
 
@@ -49,8 +52,8 @@ public class Schedule {
         return "Schedule{" +
                 "idSchedule=" + id +
                 ", movieName='" + movie.getName() +
-                "screeningDate=" + date +'\'' +
-                "hallName=" + hall.getName() +
+                ",screeningDate=" + date +'\'' +
+                ",hallName=" + hall.getName() +
                 '}';
     }
 
@@ -65,6 +68,7 @@ public class Schedule {
         return this;
     }
 
+  //  @Temporal(TemporalType.TIMESTAMP)
     public Date getDate() {
         return date;
     }
@@ -72,6 +76,14 @@ public class Schedule {
     public Schedule setDate(Date date) {
         this.date = date;
         return this;
+    }
+
+    public String getMovieName() {
+        return movie.name;
+    }
+
+    public String getHallName(){
+        return hall.name;
     }
 
 

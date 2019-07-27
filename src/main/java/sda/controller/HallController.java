@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sda.model.HallDTO;
 import sda.model.MovieDTO;
+import sda.model.ScheduleDTO;
 import sda.service.HallService;
 import sda.service.MovieService;
+import sda.service.ScheduleService;
 
 import java.util.List;
 
@@ -22,14 +24,19 @@ public class HallController {
     @Autowired
     MovieService movieService;
 
+    @Autowired
+    ScheduleService scheduleService;
+
 
     @GetMapping("/home")
     public String hallPage(Model model) {
        List<HallDTO> halls = hallService.getAllHalls();
         List<MovieDTO> allMovies = movieService.getAllMovies();
+        List<ScheduleDTO> allSchedule = scheduleService.getAllSchedules();
 
         model.addAttribute("halls",halls);
-       model.addAttribute("movies",allMovies);
+        model.addAttribute("movies",allMovies);
+        model.addAttribute("schedules",allSchedule);
 
        return "home";
     }

@@ -24,5 +24,12 @@
 
 </ol>
 
+<h3> The current schedule: </h3>
+<ol th:each="schedule:${schedules}">
+    <li th:text="${schedule.id}"></li>
+    <li th:text="${schedule.date}"></li>
+    <li th:text="${schedule.movie_id}"></li>
+    <li th:text="${schedule.hall_id}"></li>
+</ol>
 </body>
 </html>
