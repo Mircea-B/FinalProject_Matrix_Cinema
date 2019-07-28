@@ -31,5 +31,14 @@
     <li th:text="${schedule.movie_id}"></li>
     <li th:text="${schedule.hall_id}"></li>
 </ol>
+
+<h4> Reservation test: </h4>
+<ol th:each="reservation:${reservations}">
+<li th:text="${reservation.id}"></li>
+<li th:text="${reservation.row_number}"></li>
+<li th:text="${reservation.seat_number}"></li>
+<li th:text="${reservation.schedule_id}"></li>
+<li th:text="${reservation.code}"></li>
+</ol>
 </body>
 </html>

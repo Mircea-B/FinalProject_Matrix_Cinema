@@ -56,4 +56,52 @@ public class Reservation {
 
     private Reservation(){}
 
+    public Integer getId() {
+        return id;
+    }
+
+    public Reservation setId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    public Integer getRowNumber() {
+        return rowNumber;
+    }
+
+    public Reservation setRowNumber(Integer rowNumber) {
+        this.rowNumber = rowNumber;
+        return this;
+    }
+
+    public Integer getSeatNumber() {
+        return seatNumber;
+    }
+
+    public Reservation setSeatNumber(Integer seatNumber) {
+        this.seatNumber = seatNumber;
+        return this;
+    }
+
+    public String getReservationCode() {
+        return reservationCode;
+    }
+
+    public Reservation setReservationCode(String reservationCode) {
+        this.reservationCode = reservationCode;
+        return this;
+    }
+
+    public Schedule getSchedule() {
+        return schedule;
+    }
+
+    public Reservation setSchedule(Schedule schedule) {
+        this.schedule = schedule;
+        return this;
+    }
+
+    public String getScheduleInfo(){
+        return schedule.toString();
+    }
 }
