@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome 2 Matrix Cinema</title>
+</head>
+<body>
+<h1>Choose you destiny:</h1>
+<ol th:each="hall:${halls}">
+    <li th:text="${hall.id}"></li>
+    <li th:text="${hall.name}"></li>
+    <li th:text="${hall.seat}"></li>
+</ol>
+
+<p>Here, at Matrix Cinema you can watch your favourites movies in three different halls.
+    The architecture project offers different surreal theatre décor combined with the most
+    advanced acoustics standards.</p>
+
+<h2> Choose a movie: </h2>
+
+<ol th:each="movie:${movies}">
+    <li th:text="${movie.id}"></li>
+    <li th:text="${movie.name}"></li>
+
+</ol>
+
+<h3> The current schedule: </h3>
+<ol th:each="schedule:${schedules}">
+    <li th:text="${schedule.id}"></li>
+    <li th:text="${schedule.date}"></li>
+    <li th:text="${schedule.movie_id}"></li>
+    <li th:text="${schedule.hall_id}"></li>
+</ol>
+
+<h4> Reservation test: </h4>
+<ol th:each="reservation:${reservations}">
+<li th:text="${reservation.id}"></li>
+<li th:text="${reservation.row_number}"></li>
+<li th:text="${reservation.seat_number}"></li>
+<li th:text="${reservation.schedule_id}"></li>
+<li th:text="${reservation.code}"></li>
+</ol>
+</body>
+</html>

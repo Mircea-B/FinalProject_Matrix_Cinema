@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+<h2> Choose a movie: </h2>
+
+<ol th:each="movie:${movies}">
+    <li th:text="${movie.id}"></li>
+    <li th:text="${movie.name}"></li>
+</ol>
+</body>
+</html>
